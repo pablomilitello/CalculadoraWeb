@@ -9,6 +9,7 @@ do {
       "¿Qué operación deseas realizar? Presione 1 para Sumar; 2 para Restar; 3 para Multiplicar; 4 para Dividir"
     )
   );
+
   if (operacion >= 5) {
     alert("No se ha identificado la operación que desea realizar");
   }
