@@ -1,0 +1,17 @@
+@import "../base/typography.scss";
+@import "../base/color.scss";
+
+.btn__teclado {
+  background-color: map-get($colors, color_teclado);
+  border-color: map-get($colors, border_tecla);
+  font-size: larger;
+  font-weight: 500;
+  align-items: center;
+  border-style: solid;
+  border-radius: 8px;
+  margin: 2px;
+
+  &:hover {
+    background-color: map-get($colors, hover_color);
+  }
+}

@@ -1,0 +1,26 @@
+//Importo archivos scss
+@import "./components/buttons.scss";
+@import "./base/typography.scss";
+@import "./views/calculadora.scss";
+@import "./views/cientifica.scss";
+@import "./base/color.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/background_matrix.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  margin: 1rem 0rem 0rem 0rem;
+  color: map-get($colors, h1_text);
+}

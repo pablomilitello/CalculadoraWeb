@@ -1,0 +1,53 @@
+.conteiner__calculadora {
+  background: rgba(35, 87, 137, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.conteiner__calculadora__comun {
+  @extend .conteiner__calculadora;
+  width: 20rem;
+  height: 30rem;
+}
+
+.conteiner__visor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visor__calculadora {
+  background-color: map-get($colors, color_teclado);
+  margin: 0.5rem 0rem;
+  border: none;
+  border-radius: 8px;
+  color: #fcf7f8;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: end;
+  padding: 1rem 0.5rem 0rem 0.5rem;
+}
+
+#visor__calculadora__comun {
+  @extend .visor__calculadora;
+  width: 16rem;
+  height: 4rem;
+}
+
+.conteiner__teclado {
+  display: grid;
+  grid-template-columns: 4rem 4rem 4rem 4rem;
+  grid-template-rows: 4rem 4rem 4rem 4rem 4rem;
+  grid-template-areas:
+    "open_parenthesis close_parenthesis percentage division"
+    "seven eight nine multiply"
+    "four five six subtract"
+    "one two three add"
+    "erase zero point same";
+  justify-content: center;
+}
