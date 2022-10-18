@@ -1,22 +1,42 @@
-let operacion;
+//Declaration of variables
+let operation;
 let num1;
 let num2;
-let resultado;
-
-do {
-  operacion = parseInt(
-    prompt(
-      "¿Qué operación deseas realizar? Presione 1 para Sumar; 2 para Restar; 3 para Multiplicar; 4 para Dividir"
-    )
-  );
-
-  if (operacion >= 5) {
-    alert("No se ha identificado la operación que desea realizar");
-  }
-} while (0 < operacion > 4);
+let result;
 
 while (true) {
-  ingresarOperandos();
+  //Enter operands
+  operation = parseInt(
+    prompt(
+      "¿Qué operación deseas realizar?. Presione:\n 1 para Sumar \n 2 para Restar\n 3 para Multiplicar\n 4 para Dividir"
+    )
+  );
+  if (!isNaN(operation) && operation != null && operation != "") {
+    //It's a number
+    break;
+  } else {
+    //It's not a number
+    continue;
+  }
+}
+
+if (operation <= 4 && operation >= 1) {
+  //check = "true";
+} else {
+  while (operation >= 5 || operation <= 0) {
+    alert("No se ha identificado la operación que desea realizar");
+    operation = parseInt(
+      prompt(
+        "¿Qué operación deseas realizar?. Presione:\n 1 para Sumar \n 2 para Restar\n 3 para Multiplicar\n 4 para Dividir"
+      )
+    );
+  }
+  //check = "true";
+}
+
+//Verification is or isn't a number
+while ("true") {
+  enterOperands();
   if (
     !isNaN(num1) &&
     !isNaN(num2) &&
@@ -25,15 +45,16 @@ while (true) {
     num1 != "" &&
     num2 != ""
   ) {
-    //Es un número
+    //It's a number
     break;
   } else {
-    //No es un número
+    //It's not a number
     continue;
   }
 }
 
-function ingresarOperandos() {
+//Funtions
+function enterOperands() {
   num1 = parseFloat(
     prompt("Ingrese el primer número con el que desea operar:")
   );
@@ -42,32 +63,32 @@ function ingresarOperandos() {
   );
 }
 
-const sumar = (num1, num2) => {
+const add = (num1, num2) => {
   return parseFloat(num1) + parseFloat(num2);
 };
 
-const restar = (num1, num2) => {
+const substract = (num1, num2) => {
   return parseFloat(num1) - parseFloat(num2);
 };
 
-const multiplicar = (num1, num2) => {
+const multiply = (num1, num2) => {
   return parseFloat(num1) * parseFloat(num2);
 };
 
-const dividir = (num1, num2) => {
+const division = (num1, num2) => {
   return parseFloat(num1) / parseFloat(num2);
 };
 
-if (operacion == 1) {
-  resultado = sumar(num1, num2);
-  alert(resultado);
-} else if (operacion == 2) {
-  resultado = restar(num1, num2);
-  alert(resultado);
-} else if (operacion == 3) {
-  resultado = multiplicar(num1, num2);
-  alert(resultado);
-} else if (operacion == 4) {
-  resultado = dividir(num1, num2);
-  alert(resultado);
+if (operation == 1) {
+  result = add(num1, num2);
+  alert(result);
+} else if (operation == 2) {
+  result = substract(num1, num2);
+  alert(result);
+} else if (operation == 3) {
+  result = multiply(num1, num2);
+  alert(result);
+} else if (operation == 4) {
+  result = division(num1, num2);
+  alert(result);
 }
