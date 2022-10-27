@@ -11,7 +11,11 @@
   border-radius: 8px;
   margin: 2px;
 
-  &:hover {
-    background-color: map-get($colors, hover_color);
+  &:active {
+    background-color: map-get($colors, active_color);
+  }
+
+  &:focus {
+    outline: none;
   }
 }

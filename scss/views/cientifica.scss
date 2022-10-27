@@ -23,3 +23,9 @@
   width: 27.5rem;
   height: 4rem;
 }
+
+.visor_superior,
+.visor_inferior {
+  color: map-get($colors, color_text);
+  font-size: .5em;
+}

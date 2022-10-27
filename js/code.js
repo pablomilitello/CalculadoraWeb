@@ -69,6 +69,11 @@ const division = (num1, num2) => {
   return num1 / num2;
 };
 
+//Declaration Funtion Percentage
+const percentage = (num1, num2) => {
+  return num1 / 100;
+};
+
 //Declaration Funtion ShowResult
 const showResul = (result) => alert(result);
 
@@ -88,6 +93,10 @@ switch (operation) {
     break;
   case 4:
     result = division(num1, num2);
+    showResul(result);
+    break;
+  case 5:
+    result = percentage(num1);
     showResul(result);
     break;
 }

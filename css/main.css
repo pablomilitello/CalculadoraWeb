@@ -10,8 +10,10 @@
   border-style: solid;
   border-radius: 8px;
   margin: 2px; }
-  .btn__teclado:hover {
+  .btn__teclado:active {
     background-color: #efefd0; }
+  .btn__teclado:focus {
+    outline: none; }
 
 * {
   font-family: "Roboto", sans-serif; }
@@ -71,6 +73,11 @@
 #visor__calculadora__cientifica {
   width: 27.5rem;
   height: 4rem; }
+
+.visor_superior,
+.visor_inferior {
+  color: #000000;
+  font-size: .5em; }
 
 * {
   margin: 0px;
