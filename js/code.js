@@ -4,58 +4,33 @@ let num1;
 let num2;
 let result;
 
-while (true) {
+while (
+  isNaN(operation) ||
+  operation == null ||
+  operation == "" ||
+  operation > 4 ||
+  operation < 0
+) {
   //Enter operations
   enterOperations();
-  if (!isNaN(operation) && operation != null && operation != "") {
-    //It's a number
-    break;
-  } else {
-    //It's not a number
-    continue;
-  }
-}
-
-if (operation <= 4 && operation >= 1) {
-  //check = "true";
-} else {
-  while (operation >= 5 || operation <= 0) {
+  if (operation > 4 || operation < 1) {
     alert("No se ha identificado la operación que desea realizar");
-    while (true) {
-      //Enter operations
-      enterOperations();
-      if (!isNaN(operation) && operation != null && operation != "") {
-        //It's a number
-        break;
-      } else {
-        //It's not a number
-        continue;
-      }
-    }
   }
-  //check = "true";
 }
 
 //Verification is or isn't a number
-while ("true") {
+while (
+  isNaN(num1) ||
+  num1 == null ||
+  num1 == "" ||
+  isNaN(num2) ||
+  num2 == null ||
+  num2 == ""
+) {
   enterOperands();
-  if (
-    !isNaN(num1) ||
-    !isNaN(num2) ||
-    num1 != null ||
-    num2 != null ||
-    num1 != "" ||
-    num2 != ""
-  ) {
-    //It's a number
-    break;
-  } else {
-    //It's not a number
-    continue;
-  }
 }
 
-//Funtions
+//Funtions enter operations
 function enterOperations() {
   operation = parseInt(
     prompt(
@@ -64,6 +39,7 @@ function enterOperations() {
   );
 }
 
+//Funtions enter operands
 function enterOperands() {
   num1 = parseFloat(
     prompt("Ingrese el primer número con el que desea operar:")
@@ -73,34 +49,45 @@ function enterOperands() {
   );
 }
 
+//Declaration Funtion Add
 const add = (num1, num2) => {
   return num1 + num2;
 };
 
+//Declaration Funtion Substract
 const substract = (num1, num2) => {
   return num1 - num2;
 };
 
+//Declaration Funtion Multiply
 const multiply = (num1, num2) => {
   return num1 * num2;
 };
 
+//Declaration Funtion Division
 const division = (num1, num2) => {
   return num1 / num2;
 };
 
+//Declaration Funtion ShowResult
 const showResul = (result) => alert(result);
 
-if (operation == 1) {
-  result = add(num1, num2);
-  showResul(result);
-} else if (operation == 2) {
-  result = substract(num1, num2);
-  showResul(result);
-} else if (operation == 3) {
-  result = multiply(num1, num2);
-  showResul(result);
-} else if (operation == 4) {
-  result = division(num1, num2);
-  showResul(result);
+//Switch Operations
+switch (operation) {
+  case 1:
+    result = add(num1, num2);
+    showResul(result);
+    break;
+  case 2:
+    result = substract(num1, num2);
+    showResul(result);
+    break;
+  case 3:
+    result = multiply(num1, num2);
+    showResul(result);
+    break;
+  case 4:
+    result = division(num1, num2);
+    showResul(result);
+    break;
 }
