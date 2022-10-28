@@ -1,7 +1,7 @@
 .conteiner__teclado__cientifica {
   display: grid;
-  grid-template-columns: 4rem 4rem 4rem 4rem 4rem 4rem 4rem;
-  grid-template-rows: 4rem 4rem 4rem 4rem 4rem;
+  grid-template-columns: 4em 4em 4em 4em 4em 4em 4em;
+  grid-template-rows: 4em 4em 4em 4em 4em;
 
   grid-template-areas:
     "radial degre  multiply_all_back open_parenthesis close_parenthesis percentage erase"
@@ -13,19 +13,14 @@
 }
 
 .conteiner__calculadora__cientifica {
-  @extend .conteiner__calculadora;
-  width: 30rem;
-  height: 30rem;
-}
-
-#visor__calculadora__cientifica {
-  @extend .visor__calculadora;
-  width: 27.5rem;
-  height: 4rem;
-}
-
-.visor_superior,
-.visor_inferior {
-  color: map-get($colors, color_text);
-  font-size: .5em;
+  background: rgba(35, 87, 137, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  border-radius: 8px;
+  width: 30em;
+  height: 33em;
 }

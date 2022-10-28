@@ -15,10 +15,53 @@
   .btn__teclado:focus {
     outline: none; }
 
+#visor__calculadora__cientifica {
+  background-color: #ffffff;
+  margin: 0.5em 0em 1em 1.2em;
+  border: none;
+  border-radius: 8px;
+  color: #fcf7f8;
+  font-weight: 600;
+  text-align: end;
+  padding: 0.5em;
+  width: 27.5em;
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  text-align: right;
+  word-break: break-all; }
+
+.visor_superior {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 26.5rem;
+  height: 4em;
+  color: #000000;
+  font-size: 1.5rem; }
+
+.visor_inferior {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 26.5rem;
+  height: 4em;
+  color: #000000;
+  font-size: 1.2rem; }
+
 * {
   font-family: "Roboto", sans-serif; }
 
-.conteiner__calculadora, .conteiner__calculadora__comun, .conteiner__calculadora__cientifica {
+.conteiner__teclado__cientifica {
+  display: grid;
+  grid-template-columns: 4em 4em 4em 4em 4em 4em 4em;
+  grid-template-rows: 4em 4em 4em 4em 4em;
+  grid-template-areas: "radial degre  multiply_all_back open_parenthesis close_parenthesis percentage erase" "invert sin natural_logarithm seven eight nine division" "pi cos  logarithm four five six multiply" "euler_number tangent square_root one two three subtract" "previous_result exponential_ten exponential_y zero point same add";
+  justify-content: center; }
+
+.conteiner__calculadora__cientifica {
   background: rgba(35, 87, 137, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -26,58 +69,9 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
-  border-radius: 8px; }
-
-.conteiner__calculadora__comun {
-  width: 20rem;
-  height: 30rem; }
-
-.conteiner__visor {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.visor__calculadora, #visor__calculadora__comun, #visor__calculadora__cientifica {
-  background-color: #ffffff;
-  margin: 0.5rem 0rem;
-  border: none;
   border-radius: 8px;
-  color: #fcf7f8;
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: end;
-  padding: 1rem 0.5rem 0rem 0.5rem; }
-
-#visor__calculadora__comun {
-  width: 16rem;
-  height: 4rem; }
-
-.conteiner__teclado {
-  display: grid;
-  grid-template-columns: 4rem 4rem 4rem 4rem;
-  grid-template-rows: 4rem 4rem 4rem 4rem 4rem;
-  grid-template-areas: "open_parenthesis close_parenthesis percentage division" "seven eight nine multiply" "four five six subtract" "one two three add" "erase zero point same";
-  justify-content: center; }
-
-.conteiner__teclado__cientifica {
-  display: grid;
-  grid-template-columns: 4rem 4rem 4rem 4rem 4rem 4rem 4rem;
-  grid-template-rows: 4rem 4rem 4rem 4rem 4rem;
-  grid-template-areas: "radial degre  multiply_all_back open_parenthesis close_parenthesis percentage erase" "invert sin natural_logarithm seven eight nine division" "pi cos  logarithm four five six multiply" "euler_number tangent square_root one two three subtract" "previous_result exponential_ten exponential_y zero point same add";
-  justify-content: center; }
-
-.conteiner__calculadora__cientifica {
-  width: 30rem;
-  height: 30rem; }
-
-#visor__calculadora__cientifica {
-  width: 27.5rem;
-  height: 4rem; }
-
-.visor_superior,
-.visor_inferior {
-  color: #000000;
-  font-size: .5em; }
+  width: 30em;
+  height: 33em; }
 
 * {
   margin: 0px;
@@ -93,5 +87,5 @@ body {
   background-size: cover; }
 
 h1 {
-  margin: 1rem 0rem 0rem 0rem;
+  margin: 0.5em 0rem 0rem 0rem;
   color: #fcf7f8; }
