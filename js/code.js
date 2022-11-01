@@ -1,24 +1,24 @@
-//Declaration of variables
-let operation;
+//Declaracion de variables
+let operacion;
 let num1;
 let num2;
-let result;
+let resultado;
 
 while (
-  isNaN(operation) ||
-  operation == null ||
-  operation == "" ||
-  operation > 4 ||
-  operation < 0
+  isNaN(operacion) ||
+  operacion == null ||
+  operacion == "" ||
+  operacion > 4 ||
+  operacion < 0
 ) {
-  //Enter operations
-  enterOperations();
-  if (operation > 4 || operation < 1) {
+  //Ingresar operacion
+  ingresarOperacion();
+  if (operacion > 4 || operacion < 1) {
     alert("No se ha identificado la operación que desea realizar");
   }
 }
 
-//Verification is or isn't a number
+//Verifica si es o no un numero
 while (
   isNaN(num1) ||
   num1 == null ||
@@ -27,20 +27,20 @@ while (
   num2 == null ||
   num2 == ""
 ) {
-  enterOperands();
+  ingresarOperandos();
 }
 
-//Funtions enter operations
-function enterOperations() {
-  operation = parseInt(
+//Funcion ingresar operacion
+function ingresarOperacion() {
+  operacion = parseInt(
     prompt(
       "¿Qué operación deseas realizar?. Presione:\n 1 para Sumar \n 2 para Restar\n 3 para Multiplicar\n 4 para Dividir"
     )
   );
 }
 
-//Funtions enter operands
-function enterOperands() {
+//Funcion ingresar operandos
+function ingresarOperandos() {
   num1 = parseFloat(
     prompt("Ingrese el primer número con el que desea operar:")
   );
@@ -49,54 +49,45 @@ function enterOperands() {
   );
 }
 
-//Declaration Funtion Add
-const add = (num1, num2) => {
-  return num1 + num2;
-};
+class Calculadora {
+  constructor(num1, num2) {
+    this.num1 = num1;
+    this.num2 = num2;
+  }
+  sumar() {
+    return this.num1 + this.num2;
+  }
+  restar() {
+    return this.num1 - this.num2;
+  }
+  multiplicar() {
+    return this.num1 * this.num2;
+  }
+  dividir() {
+    return this.num1 / this.num2;
+  }
+}
 
-//Declaration Funtion Substract
-const substract = (num1, num2) => {
-  return num1 - num2;
-};
+//Declaracion de funcion mostrarResultado
+const mostrarResultado = (resultado) => alert(resultado);
 
-//Declaration Funtion Multiply
-const multiply = (num1, num2) => {
-  return num1 * num2;
-};
-
-//Declaration Funtion Division
-const division = (num1, num2) => {
-  return num1 / num2;
-};
-
-//Declaration Funtion Percentage
-const percentage = (num1, num2) => {
-  return num1 / 100;
-};
-
-//Declaration Funtion ShowResult
-const showResul = (result) => alert(result);
-
-//Switch Operations
-switch (operation) {
+//Switch Operaciones
+switch (operacion) {
   case 1:
-    result = add(num1, num2);
-    showResul(result);
+    calculo1 = new Calculadora(num1, num2);
+    mostrarResultado(calculo1.sumar());
     break;
   case 2:
-    result = substract(num1, num2);
-    showResul(result);
+    calculo2 = new Calculadora(num1, num2);
+    mostrarResultado(calculo2.restar());
     break;
   case 3:
-    result = multiply(num1, num2);
-    showResul(result);
+    calculo3 = new Calculadora(num1, num2);
+    mostrarResultado(calculo3.multiplicar());
+    break;
     break;
   case 4:
-    result = division(num1, num2);
-    showResul(result);
-    break;
-  case 5:
-    result = percentage(num1);
-    showResul(result);
+    calculo4 = new Calculadora(num1, num2);
+    mostrarResultado(calculo4.dividir());
     break;
 }

@@ -15,7 +15,7 @@
   .btn__teclado:focus {
     outline: none; }
 
-#visor__calculadora__cientifica {
+#display__calculadora__cientifica {
   background-color: #ffffff;
   margin: 0.5em 0em 1em 1.2em;
   border: none;
@@ -33,7 +33,7 @@
   text-align: right;
   word-break: break-all; }
 
-.visor_superior {
+#valor-anterior {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -42,7 +42,7 @@
   color: #000000;
   font-size: 1.5rem; }
 
-.visor_inferior {
+#valor-actual {
   display: flex;
   justify-content: end;
   align-items: center;
