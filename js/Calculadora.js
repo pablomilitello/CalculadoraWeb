@@ -1,5 +1,4 @@
 //Declaro la clase Calculadora
-
 class Calculadora {
   sumar(num1, num2) {
     return num1 + num2;
