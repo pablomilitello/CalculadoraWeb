@@ -1,4 +1,4 @@
-#display__calculadora__cientifica {
+#visor__calculadora__cientifica {
     background-color: map-get($colors, color_teclado);
     margin: 0.5em 0em 1em 1.2em;
     border: none;
@@ -17,8 +17,8 @@
     word-break: break-all;
 }
 
-//Display superior
-#valor-anterior {
+//Visor superior
+#valorAnterior {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -28,8 +28,8 @@
     font-size: 1.5rem;
 }
 
-//Display inferior
-#valor-actual {
+//Visor inferior
+#valorActual {
     display: flex;
     justify-content: end;
     align-items: center;

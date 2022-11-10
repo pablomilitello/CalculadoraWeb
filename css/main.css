@@ -1,7 +1,8 @@
 * {
   font-family: "Roboto", sans-serif; }
 
-.btn__teclado {
+.btnNumero,
+.btnOperador {
   background-color: #ffffff;
   border-color: #000000;
   font-size: larger;
@@ -10,12 +11,14 @@
   border-style: solid;
   border-radius: 8px;
   margin: 2px; }
-  .btn__teclado:active {
+  .btnNumero:active,
+  .btnOperador:active {
     background-color: #efefd0; }
-  .btn__teclado:focus {
+  .btnNumero:focus,
+  .btnOperador:focus {
     outline: none; }
 
-#display__calculadora__cientifica {
+#visor__calculadora__cientifica {
   background-color: #ffffff;
   margin: 0.5em 0em 1em 1.2em;
   border: none;
@@ -33,7 +36,7 @@
   text-align: right;
   word-break: break-all; }
 
-#valor-anterior {
+#valorAnterior {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -42,7 +45,7 @@
   color: #000000;
   font-size: 1.5rem; }
 
-#valor-actual {
+#valorActual {
   display: flex;
   justify-content: end;
   align-items: center;

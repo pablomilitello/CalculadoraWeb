@@ -1,7 +1,8 @@
 @import "../base/typography.scss";
 @import "../base/color.scss";
 
-.btn__teclado {
+.btnNumero,
+.btnOperador {
   background-color: map-get($colors, color_teclado);
   border-color: map-get($colors, border_tecla);
   font-size: larger;
