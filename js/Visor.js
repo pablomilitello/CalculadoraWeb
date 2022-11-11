@@ -1,8 +1,18 @@
 //Declaro la clase Visor
 
 class Visor {
-  constructor(mostrarValorAnterior, mostrarValorActual) {
-    this.mostrarValorAnterior = mostrarValorAnterior;
-    this.mostrarValorActual = mostrarValorActual;
+  constructor(visorValorAnterior, visorValorActual) {
+    this.visorValorAnterior = visorValorAnterior;
+    this.visorValorActual = visorValorActual;
+  }
+
+  agregoNumero(numero) {
+    this.visorValorActual = this.visorValorActual + numero;
+    this.imprimirEnVisor();
+  }
+
+  imprimirEnVisor() {
+    this.visorValorActual.textContent = this.visorValorActual;
+    this.visorValorAnterior.textContent = this.visorValorAnterior;
   }
 }

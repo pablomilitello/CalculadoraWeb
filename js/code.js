@@ -5,7 +5,15 @@ let num2;
 //Vinculo el DOM
 const btnNumero = document.querySelectorAll(".btnNumero");
 const btnOperador = document.querySelectorAll(".btnOperador");
-const borrarNumero = document.getElementById("borrarAnterior");
-const borrarTodo = document.getElementById("borrarTodo");
-const mostrarValorAnterior = document.getElementById("valorAnterior");
-const mostrarValorActual = document.getElementById("valorActual");
+const visorValorActual = document.getElementById("valorActual");
+const visorValorAnterior = document.getElementById("valorAnterior");
+
+//Instanciar Visor
+const visor = new Visor(visorValorAnterior, visorValorActual);
+
+//Escuchar la botonera
+btnNumero.forEach((numero) => {
+  numero.addEventListener("click", () => {
+    visor.agregoNumero(numero.innerText);
+  });
+});
