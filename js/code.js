@@ -12,8 +12,6 @@ const visorValorAnterior = document.getElementById("valorAnterior");
 const visor = new Visor(visorValorAnterior, visorValorActual);
 
 //Escuchar la botonera
-btnNumero.forEach((numero) => {
-  numero.addEventListener("click", () => {
-    visor.agregoNumero(numero.innerText);
-  });
+btnNumero.forEach((btn) => {
+  btn.addEventListener("click", () => visor.agregarOperando(btn.innerHTML));
 });

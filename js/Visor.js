@@ -6,13 +6,13 @@ class Visor {
     this.visorValorActual = visorValorActual;
   }
 
-  agregoNumero(numero) {
-    this.visorValorActual = this.visorValorActual + numero;
+  agregarOperando(operando) {
+    this.visorValorActual = this.visorValorActual + operando;
     this.imprimirEnVisor();
   }
 
   imprimirEnVisor() {
-    this.visorValorActual.textContent = this.visorValorActual;
+    this.visorValorActual.textContent = parseFloat(this.visorValorActual);
     this.visorValorAnterior.textContent = this.visorValorAnterior;
   }
 }
