@@ -7,7 +7,7 @@ class Visor {
     this.valorAnterior = "";
     this.valorActual = "";
     this.calculadora = new Calculadora();
-    this.operacion = undefined;
+    this.operacion = "undefined";
     this.signos = {
       sumar: "+",
       restar: "-",
@@ -16,22 +16,23 @@ class Visor {
     };
   }
 
+  //Metodo para agregar un operando
   agregarOperando(operando) {
-    if (operando == "." && this.valorActual.includes(".")) return;
-    else {
-      this.valorActual = this.valorActual.toString() + operando.toString();
-      this.imprimirEnVisor();
-    }
+    if (operando === "." && this.valorActual.includes(".")) return;
+    this.valorActual = this.valorActual + operando;
+    this.imprimirEnVisor();
   }
 
+  //Metodo para agregar una operación
   agregarOperaciones(operaciones) {
-    this.tipoOperacion != "igual" && this.operar();
+    operaciones == "igual" && this.operar();
     this.operacion = operaciones;
-    this.valorAnterior = this.valorActual || this.valorAnterior;
+    this.valorAnterior = this.valorActual ?? this.valorAnterior;
     this.valorActual = "";
     this.imprimirEnVisor();
   }
 
+  //Metodo para borrar todo el visor
   borrarTodo() {
     this.valorActual = "";
     this.valorAnterior = "";
@@ -39,21 +40,26 @@ class Visor {
     this.imprimirEnVisor();
   }
 
+  //Metodo para borrar el valor anterior
   borrarAnterior() {
-    this.valorActual = this.valorActual.slice(0, -2);
+    this.valorActual = this.valorActual.slice(0, -1);
     this.imprimirEnVisor();
   }
 
+  //Metodo para imprimir en el visor
   imprimirEnVisor() {
     this.visorValorActual.textContent = this.valorActual;
     this.visorValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.operacion] || ""}`;
   }
 
+  //Metodo para operar la calculadora
   operar() {
-    const valorActual = parseFloat(this.valorActual);
-    const valorAnterior = parseFloat(this.valorAnterior);
-
-    if (isNaN(valorActual) || isNaN(valorAnterior)) return;
-    this.valorActual = this.calculadora[this.operacion](valorAnterior, valorActual);
+    const anterior = parseFloat(this.valorAnterior);
+    const actual = parseFloat(this.valorActual);
+    if (isNaN(actual) || isNaN(anterior)) return;
+    this.valorActual = this.calculadora[this.operacion](anterior, actual);
+    this.operacion = undefined;
   }
+
+  //Metodo para almacenar las 3 ultimas operaciones en el SessionStorage
 }

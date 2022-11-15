@@ -2,7 +2,8 @@
   font-family: "Roboto", sans-serif; }
 
 .btnNumero,
-.btnOperador {
+.btnOperador,
+.btnBorrar {
   background-color: #ffffff;
   border-color: #000000;
   font-size: larger;
@@ -12,10 +13,12 @@
   border-radius: 8px;
   margin: 2px; }
   .btnNumero:active,
-  .btnOperador:active {
+  .btnOperador:active,
+  .btnBorrar:active {
     background-color: #efefd0; }
   .btnNumero:focus,
-  .btnOperador:focus {
+  .btnOperador:focus,
+  .btnBorrar:focus {
     outline: none; }
 
 #visor {

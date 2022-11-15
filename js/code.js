@@ -1,7 +1,3 @@
-//Declaro variables
-let num1;
-let num2;
-
 //Vinculo el DOM
 const btnNumero = document.querySelectorAll(".btnNumero");
 const btnOperador = document.querySelectorAll(".btnOperador");
@@ -20,7 +16,7 @@ btnNumero.forEach((btn) => {
 
 //Escuchar botones de operadores
 btnOperador.forEach((btn) => {
-  btn.addEventListener("click", () => visor.agregarOperaciones(btn.value, btn.innerHTML));
+  btn.addEventListener("click", () => visor.agregarOperaciones(btn.value));
 });
 
 //Escuchar boton borrar todo
