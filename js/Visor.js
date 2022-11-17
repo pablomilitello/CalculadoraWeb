@@ -60,11 +60,21 @@ class Visor {
 
   //Metodo para operar la calculadora
   operar() {
+    if (this.valorActual == "e") {
+      this.valorActual = JSON.parse(sessionStorage.getItem("guardoConstantes"));
+      this.valorActual = parseFloat(this.valorActual.nroEuler);
+      this.valorAnterior = "";
+      this.imprimirEnVisor();
+    } else if (this.valorActual == "π") {
+      this.valorActual = JSON.parse(sessionStorage.getItem("guardoConstantes"));
+      this.valorActual = parseFloat(this.valorActual.nroPi);
+      this.valorAnterior = "";
+      this.imprimirEnVisor();
+    }
     const anterior = parseFloat(this.valorAnterior);
     const actual = parseFloat(this.valorActual);
     if (isNaN(actual) || isNaN(anterior)) return;
+
     this.valorActual = this.calculadora[this.operacion](anterior, actual);
   }
-
-  //Metodo para almacenar las 3 ultimas operaciones en el SessionStorage
 }

@@ -30,4 +30,22 @@ class Calculadora {
   log(num1) {
     return Math.log10(num1);
   }
+  secuenciaDecreciente(num1) {
+    let resultado = 1;
+    for (let i = 1; i <= num1; i++) {
+      resultado = resultado * i;
+    }
+    return resultado;
+  }
+  exponencial(num1, num2) {
+    return Math.pow(num1, num2);
+  }
+  exponencial10(num1, num2) {
+    let resultado;
+    let base = 10;
+    for (let i = 1; i < num2; i++) {
+      base = 10 * base;
+    }
+    return base * num1;
+  }
 }
