@@ -33,7 +33,7 @@ class Visor {
   agregarOperaciones(operaciones) {
     operaciones == "igual" && this.operar();
     this.operacion = operaciones;
-    this.valorAnterior = this.valorActual ?? this.valorAnterior;
+    this.valorAnterior = this.valorActual.toString() || this.valorAnterior.toString();
     this.valorActual = "";
     this.imprimirEnVisor();
   }

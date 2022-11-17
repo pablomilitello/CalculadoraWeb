@@ -1,5 +1,3 @@
-//Definio variables globales
-
 //Vinculo el DOM
 const btnNumero = document.querySelectorAll(".btnNumero");
 const btnOperador = document.querySelectorAll(".btnOperador");
