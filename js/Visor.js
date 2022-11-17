@@ -13,6 +13,12 @@ class Visor {
       restar: "-",
       multiplicar: "x",
       dividir: "÷",
+      raizcuadrada: "sqrt",
+      sin: "sin",
+      cos: "cos",
+      tg: "tg",
+      ln: "ln",
+      log: "log",
     };
   }
 
@@ -58,7 +64,6 @@ class Visor {
     const actual = parseFloat(this.valorActual);
     if (isNaN(actual) || isNaN(anterior)) return;
     this.valorActual = this.calculadora[this.operacion](anterior, actual);
-    this.operacion = undefined;
   }
 
   //Metodo para almacenar las 3 ultimas operaciones en el SessionStorage
