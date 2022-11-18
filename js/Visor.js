@@ -38,6 +38,14 @@ class Visor {
     this.imprimirEnVisor();
   }
 
+  agregarOperacionesUnitarias(operacionesUnitarias) {
+    operacionesUnitarias == "igual" && this.operar();
+    this.operacion = operacionesUnitarias;
+    this.valorAnterior = this.valorActual.toString() || this.valorAnterior.toString();
+    this.valorActual = "";
+    this.imprimirEnVisor();
+  }
+
   //Metodo para borrar todo el visor
   borrarTodo() {
     this.valorActual = "";
@@ -73,8 +81,11 @@ class Visor {
     }
     const anterior = parseFloat(this.valorAnterior);
     const actual = parseFloat(this.valorActual);
-    if (isNaN(actual) || isNaN(anterior)) return;
 
-    this.valorActual = this.calculadora[this.operacion](anterior, actual);
+    //if (isNaN(actual) || isNaN(anterior)) return;
+
+    if (this.operacion == "raizcuadrada") {
+      this.valorActual = this.calculadora[this.operacion](anterior);
+    } else this.valorActual = this.calculadora[this.operacion](anterior, actual);
   }
 }

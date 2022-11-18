@@ -3,6 +3,7 @@
 
 .btnNumero,
 .btnOperador,
+.btnOperadorUnitario,
 .btnBorrar {
   background-color: #ffffff;
   border-color: #000000;
@@ -14,10 +15,12 @@
   margin: 2px; }
   .btnNumero:active,
   .btnOperador:active,
+  .btnOperadorUnitario:active,
   .btnBorrar:active {
     background-color: #efefd0; }
   .btnNumero:focus,
   .btnOperador:focus,
+  .btnOperadorUnitario:focus,
   .btnBorrar:focus {
     outline: none; }
 

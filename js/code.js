@@ -1,6 +1,7 @@
 //Vinculo el DOM
 const btnNumero = document.querySelectorAll(".btnNumero");
 const btnOperador = document.querySelectorAll(".btnOperador");
+const btnOperadorUnitario = document.querySelectorAll(".btnOperadorUnitario");
 const visorValorActual = document.getElementById("valorActual");
 const visorValorAnterior = document.getElementById("valorAnterior");
 const euler = document.getElementById("euler");
@@ -18,6 +19,11 @@ btnNumero.forEach((btn) => {
 //Escuchar botones de operadores
 btnOperador.forEach((btn) => {
   btn.addEventListener("click", () => visor.agregarOperaciones(btn.value));
+});
+
+//Escuchar botones de operadores unitarios
+btnOperadorUnitario.forEach((btn) => {
+  btn.addEventListener("click", () => visor.agregarOperacionesUnitarias(btn.value));
 });
 
 //Escuchar boton borrar todo

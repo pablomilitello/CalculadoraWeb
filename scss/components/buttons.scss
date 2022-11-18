@@ -3,6 +3,7 @@
 
 .btnNumero,
 .btnOperador,
+.btnOperadorUnitario,
 .btnBorrar {
   background-color: map-get($colors, color_teclado);
   border-color: map-get($colors, border_tecla);
