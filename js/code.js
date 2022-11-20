@@ -4,7 +4,6 @@ const btnOperador = document.querySelectorAll(".btnOperador");
 const btnOperadorUnitario = document.querySelectorAll(".btnOperadorUnitario");
 const visorValorActual = document.getElementById("valorActual");
 const visorValorAnterior = document.getElementById("valorAnterior");
-const euler = document.getElementById("euler");
 const btnBorrarTodo = document.getElementById("borrarTodo");
 const btnBorrarAnterior = document.getElementById("borrarAnterior");
 
