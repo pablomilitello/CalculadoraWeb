@@ -1,5 +1,4 @@
 //Declaro la clase Visor
-
 class Visor {
   constructor(visorValorAnterior, visorValorActual) {
     this.visorValorAnterior = visorValorAnterior;
@@ -82,10 +81,11 @@ class Visor {
     const anterior = parseFloat(this.valorAnterior);
     const actual = parseFloat(this.valorActual);
 
-    //if (isNaN(actual) || isNaN(anterior)) return;
-
     if (this.operacion == "raizcuadrada") {
       this.valorActual = this.calculadora[this.operacion](anterior);
-    } else this.valorActual = this.calculadora[this.operacion](anterior, actual);
+    } else {
+      this.valorActual = this.calculadora[this.operacion](anterior, actual);
+      guardarValorActual(this.valorActual);
+    }
   }
 }

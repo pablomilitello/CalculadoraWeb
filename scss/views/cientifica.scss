@@ -4,11 +4,11 @@
   grid-template-rows: 4em 4em 4em 4em 4em;
 
   grid-template-areas:
-    "radial degre  multiply_all_back open_parenthesis close_parenthesis percentage erase"
-    "invert sin natural_logarithm seven eight nine division"
-    "pi cos  logarithm four five six multiply"
-    "euler_number tangent square_root one two three subtract"
-    "previous_result exponential_ten exponential_y zero point same add";
+    "grado factorizacion raizCuadrada  borrarAnterior borrarTodo dividir"
+    "sin cos tg siete ocho nueve multiplicar"
+    "pi log logNatural cuatro cinco seis restar"
+    "nroEuler baseExponente exponencial uno dos tres sumar"
+    "resultadoAnterior invertir porcentaje cero punto igual";
   justify-content: center;
 }
 
@@ -23,4 +23,9 @@
   border-radius: 8px;
   width: 30em;
   height: 33em;
+  margin-top: 3em;
+}
+
+.conteiner_btn__autor {
+  height: 2em;
 }

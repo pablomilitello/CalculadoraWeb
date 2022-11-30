@@ -1,6 +1,9 @@
 * {
   font-family: "Roboto", sans-serif; }
 
+.btnDoble {
+  grid-column: span 2; }
+
 .btnNumero,
 .btnOperador,
 .btnOperadorUnitario,
@@ -23,6 +26,28 @@
   .btnOperadorUnitario:focus,
   .btnBorrar:focus {
     outline: none; }
+
+#btn__autor {
+  width: 10em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer; }
+
+#btn__cv {
+  width: 10em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  background-color: #ffffff;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  cursor: pointer; }
 
 #visor {
   background-color: #ffffff;
@@ -67,7 +92,7 @@
   display: grid;
   grid-template-columns: 4em 4em 4em 4em 4em 4em 4em;
   grid-template-rows: 4em 4em 4em 4em 4em;
-  grid-template-areas: "radial degre  multiply_all_back open_parenthesis close_parenthesis percentage erase" "invert sin natural_logarithm seven eight nine division" "pi cos  logarithm four five six multiply" "euler_number tangent square_root one two three subtract" "previous_result exponential_ten exponential_y zero point same add";
+  grid-template-areas: "grado factorizacion raizCuadrada  borrarAnterior borrarTodo dividir" "sin cos tg siete ocho nueve multiplicar" "pi log logNatural cuatro cinco seis restar" "nroEuler baseExponente exponencial uno dos tres sumar" "resultadoAnterior invertir porcentaje cero punto igual";
   justify-content: center; }
 
 .conteiner__calculadora__cientifica {
@@ -80,7 +105,11 @@
   text-align: center;
   border-radius: 8px;
   width: 30em;
-  height: 33em; }
+  height: 33em;
+  margin-top: 3em; }
+
+.conteiner_btn__autor {
+  height: 2em; }
 
 * {
   margin: 0px;

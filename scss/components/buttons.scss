@@ -1,10 +1,16 @@
 @import "../base/typography.scss";
 @import "../base/color.scss";
 
+.btnDoble {
+  grid-column: span 2;
+}
+
+
 .btnNumero,
 .btnOperador,
 .btnOperadorUnitario,
 .btnBorrar {
+
   background-color: map-get($colors, color_teclado);
   border-color: map-get($colors, border_tecla);
   font-size: larger;
@@ -21,4 +27,28 @@
   &:focus {
     outline: none;
   }
+}
+
+#btn__autor {
+  width: 10em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  background-color: map-get($colors, color_teclado);
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+
+#btn__cv {
+  width: 10em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  background-color: map-get($colors, color_teclado);
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  cursor: pointer;
 }

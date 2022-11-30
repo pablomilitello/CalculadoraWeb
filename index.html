@@ -13,10 +13,19 @@
     <script src="./js/Visor.js"></script>
     <script defer src="./js/Calculadora.js"></script>
     <script defer src="./js/code.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Calculadora Científica</title>
 </head>
 
 <body>
+    <div class="conteiner_btn__autor">
+        <button id="btn__autor">Creado por</button>
+    </div>
+    <div class="conteiner_btn__CV">
+        <button id="btn__cv">CV del Autor</button>
+    </div>
+
     <div class="conteiner__calculadora__cientifica">
         <div>
             <h1>CALCULADORA CIENTÍFICA</h1>
@@ -30,41 +39,44 @@
         <div class="conteiner__teclado__cientifica">
             <button class="btnOperador">Deg</button>
             <button class="btnOperadorUnitario" value="secuenciaDecreciente">x!</button>
-            <button class="btnOperador">(</button>
-            <button class="btnOperador">)</button>
+            <button class="btnOperadorUnitario" value="raizcuadrada">Sqrt</button>
             <button class="btnBorrar" id="borrarAnterior">←</button>
-            <button class="btnOperador">%</button>
-            <button class="btnBorrar" id="borrarTodo" type="submit">AC</button>
-            <button class="btnOperador">Inv</button>
+            <button class="btnDoble btnBorrar" id="borrarTodo" type="submit">AC</button>
+            <button class="btnOperador" value="dividir">÷</button>
+
             <button class="btnOperadorUnitario" value="sin">sin</button>
-            <button class="btnOperadorUnitario" value="ln">ln</button>
+            <button class="btnOperadorUnitario" value="cos">cos</button>
+            <button class="btnOperadorUnitario" value="tg">tan</button>
             <button class="btnNumero">7</button>
             <button class="btnNumero">8</button>
             <button class="btnNumero">9</button>
-            <button class="btnOperador" value="dividir">÷</button>
+            <button class="btnOperador" value="multiplicar">x</button>
+
             <button class="btnNumero">π</button>
-            <button class="btnOperadorUnitario" value="cos">cos</button>
             <button class="btnOperadorUnitario" value="log">log</button>
+            <button class="btnOperadorUnitario" value="ln">ln</button>
             <button class="btnNumero">4</button>
             <button class="btnNumero">5</button>
             <button class="btnNumero">6</button>
-            <button class="btnOperador" value="multiplicar">x</button>
+            <button class="btnOperador" value="restar">-</button>
+
             <button class="btnNumero">e</button>
-            <button class="btnOperadorUnitario" value="tg">tan</button>
-            <button class="btnOperadorUnitario" value="raizcuadrada">Sqrt</button>
+            <button class="btnOperador" value="exponencial">x<sup>y</sup></button>
+            <button class="btnOperador" value="exponencial10">EXP</button>
             <button class="btnNumero">1</button>
             <button class="btnNumero">2</button>
             <button class="btnNumero">3</button>
-            <button class="btnOperador" value="restar">-</button>
-            <button class="btnOperador">Ans</button>
-            <button class="btnOperador" value="exponencial10">EXP</button>
-            <button class="btnOperador" value="exponencial">x<sup>y</sup></button>
+            <button class="btnOperador" value="sumar">+</button>
+
+            <button class="btnOperador" id="operacionAnterior">Ans</button>
+            <button class="btnOperador">Inv</button>
+            <button class="btnOperador">%</button>
             <button class="btnNumero">0</button>
             <button class="btnNumero">.</button>
-            <button class="btnOperador" value="igual">=</button>
-            <button class="btnOperador" value="sumar">+</button>
+            <button class="btnDoble btnOperador" value="igual">=</button>
         </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
