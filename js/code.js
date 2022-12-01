@@ -21,10 +21,10 @@ const opAnterior = document.getElementById("operacionAnterior");
 //Toastify
 btnAutor.addEventListener("click", () => {
   Toastify({
-    text: "Creado por Pablo Militello!",
+    text: "Gracias Flor y Equipo!",
     duration: 1500,
-    gravity: "top",
-    position: "right",
+    gravity: "bottom",
+    position: "left",
   }).showToast();
 });
 
@@ -44,23 +44,11 @@ btnCV.addEventListener("click", () => {
   downloadPDF();
 });
 
-//Llamado a funcion guardarValorActual
-const arrayGuardarValores = [];
-
-function guardarValorActual(valor) {
-  let maxCantidadOperaciones = 5;
-  if (arrayGuardarValores.length < maxCantidadOperaciones) {
-    arrayGuardarValores.push(valor);
-    guardarValoresJSON(arrayGuardarValores);
-  } else {
-    arrayGuardarValores.splice(0, 1);
-    arrayGuardarValores.push(valor);
-    guardarValoresJSON(arrayGuardarValores);
-  }
-}
-
 //Instanciar Visor
 const visor = new Visor(visorValorAnterior, visorValorActual);
+
+//Declaro array vacio para guardar valores de las operaciones
+const arrayGuardarValores = [];
 
 //Escuchar botones de operandos
 btnNumero.forEach((btn) => {
@@ -83,7 +71,7 @@ btnBorrarTodo.addEventListener("click", () => visor.borrarTodo());
 //Escuchar boton borrar anterior
 btnBorrarAnterior.addEventListener("click", () => visor.borrarAnterior());
 
-//Session storage y JSON
+//SessionStorage y JSON
 const nroEuler = Math.E;
 const nroPi = Math.PI;
 
@@ -108,11 +96,10 @@ const resultadoOperaciones = () => {
 
 //Escuchar boton operacionAnterior
 opAnterior.addEventListener("click", (e) => {
+  const pressionaBoton = 1;
   e.preventDefault();
-
   resultadoOperaciones().then((respuesta) => {
     let resultadoRescatado = respuesta;
-
     console.log(resultadoRescatado[`${resultadoRescatado.length - 1}`]);
   });
 });

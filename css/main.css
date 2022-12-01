@@ -33,9 +33,6 @@
   border-radius: 0.5em;
   font-weight: 600;
   background-color: #ffffff;
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
   cursor: pointer; }
 
 #btn__cv {
@@ -44,9 +41,6 @@
   border-radius: 0.5em;
   font-weight: 600;
   background-color: #ffffff;
-  position: absolute;
-  top: 40px;
-  left: 40px;
   cursor: pointer; }
 
 #visor {
@@ -106,10 +100,9 @@
   border-radius: 8px;
   width: 30em;
   height: 33em;
-  margin-top: 3em; }
-
-.conteiner_btn__autor {
-  height: 2em; }
+  margin-top: 3em;
+  position: absolute;
+  top: 5px; }
 
 * {
   margin: 0px;
@@ -118,6 +111,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(../images/background_matrix.jpg);
@@ -127,3 +121,38 @@ body {
 h1 {
   margin: 0.5em 0rem 0rem 0rem;
   color: #fcf7f8; }
+
+.conteiner {
+  width: 90%;
+  height: 4em;
+  display: flex;
+  margin-top: 1em;
+  align-items: flex-start;
+  justify-content: space-between; }
+
+.conteiner_btn__autor {
+  width: 14em;
+  height: 2em; }
+
+.conteiner_btn__CV {
+  width: 14em;
+  height: 3em;
+  position: absolute;
+  bottom: 2em;
+  right: 1em; }
+
+.conteiner__input {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  width: 14em;
+  height: 7em;
+  background-color: black;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-weight: bolder; }
+
+.login {
+  padding: 2px;
+  margin: 5px;
+  border-radius: 4px; }

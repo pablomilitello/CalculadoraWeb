@@ -59,6 +59,19 @@ class Visor {
     this.imprimirEnVisor();
   }
 
+  //Metodo para guardarValorActual
+  guardarValorActual(valor) {
+    let maxCantidadOperaciones = 5;
+    if (arrayGuardarValores.length < maxCantidadOperaciones) {
+      arrayGuardarValores.push(valor);
+      guardarValoresJSON(arrayGuardarValores);
+    } else {
+      arrayGuardarValores.splice(0, 1);
+      arrayGuardarValores.push(valor);
+      guardarValoresJSON(arrayGuardarValores);
+    }
+  }
+
   //Metodo para imprimir en el visor
   imprimirEnVisor() {
     this.visorValorActual.textContent = this.valorActual;
@@ -85,7 +98,7 @@ class Visor {
       this.valorActual = this.calculadora[this.operacion](anterior);
     } else {
       this.valorActual = this.calculadora[this.operacion](anterior, actual);
-      guardarValorActual(this.valorActual);
+      this.guardarValorActual(this.valorActual);
     }
   }
 }

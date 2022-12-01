@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(../images/background_matrix.jpg);
@@ -10,4 +11,45 @@ body {
 h1 {
     margin: 0.5em 0rem 0rem 0rem;
     color: map-get($colors, h1_text);
+}
+
+
+.conteiner {
+    width: 90%;
+    height: 4em;
+    display: flex;
+    margin-top: 1em;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.conteiner_btn__autor {
+    width: 14em;
+    height: 2em;
+}
+
+.conteiner_btn__CV {
+    width: 14em;
+    height: 3em;
+    position: absolute;
+    bottom: 2em;
+    right: 1em;
+}
+
+.conteiner__input {
+    display: flex;
+    flex-direction: column;
+    color: map-get($colors, color_teclado);
+    width: 14em;
+    height: 7em;
+    background-color: black;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+.login {
+    padding: 2px;
+    margin: 5px;
+    border-radius: 4px;
 }
