@@ -6,6 +6,8 @@ body {
     background-image: url(../images/background_matrix.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -56,9 +58,10 @@ h1 {
 }
 
 .div__btn {
-    padding: 5px 2px 2px 2px;
+    padding: 2px;
     margin: 5px;
     border-radius: 8px;
-    height: 9.5em;
+    height: 3em;
     font-weight: bolder;
+    cursor: pointer;
 }

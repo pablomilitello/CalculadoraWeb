@@ -9,6 +9,19 @@ const btnBorrarAnterior = document.getElementById("borrarAnterior");
 const btnAutor = document.getElementById("btn__autor");
 const btnCV = document.getElementById("btn__cv");
 const opAnterior = document.getElementById("operacionAnterior");
+const usuario = document.getElementById("usuario");
+const contrasena = document.getElementById("contrasena");
+const btnSesion = document.getElementById("btnSesion");
+
+//Función de Inicio de Sesión
+// btnSesion.addEventListener("click", () => {
+//   console.log(usuario.value);
+//   console.log(contrasena.value);
+// });
+let promesa = fetch("./js/datos.json");
+console.log(promesa);
+//.then((respuesta) => respuesta.json)
+//.then((json) => console.log(json));
 
 //Sweet Alert Bienvenida
 // Swal.fire({
