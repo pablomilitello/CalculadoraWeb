@@ -9,27 +9,48 @@ const btnBorrarAnterior = document.getElementById("borrarAnterior");
 const btnAutor = document.getElementById("btn__autor");
 const btnCV = document.getElementById("btn__cv");
 const opAnterior = document.getElementById("operacionAnterior");
-const usuario = document.getElementById("usuario");
-const contrasena = document.getElementById("contrasena");
+const usuarioInput = document.getElementById("usuario");
+const contrasenaInput = document.getElementById("contrasena");
 const btnSesion = document.getElementById("btnSesion");
+const calculadoraDiv = document.getElementById("calculadora");
+const loginDiv = document.getElementById("login");
+
+//Función para rescatar el Usuario y Contraseña del archivo JSON
+let usuarios = [];
+async function rescatarData() {
+  const respuesta = await fetch("./js/usuarios.json");
+  usuarios = await respuesta.json();
+}
 
 //Función de Inicio de Sesión
-// btnSesion.addEventListener("click", () => {
-//   console.log(usuario.value);
-//   console.log(contrasena.value);
-// });
-let promesa = fetch("./js/datos.json");
-console.log(promesa);
-//.then((respuesta) => respuesta.json)
-//.then((json) => console.log(json));
+function iniciarSesion() {
+  const usuarioRegistrado = usuarios.find((u) => {
+    return usuarioInput.value === u.nombre && contrasenaInput.value === u.clave;
+  });
+  if (usuarioRegistrado) {
+    Swal.fire({
+      title: `Bienvenido ${usuarioRegistrado.nombre}`,
+      text: "Podrás trabajar con la Calculadora Científica!!!",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+    calculadoraDiv.classList.add("visible");
+    loginDiv.classList.add("invisible");
+  } else {
+    Swal.fire({
+      title: "Error",
+      text: "Usuario o contraseña incorrecta",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
+}
 
-//Sweet Alert Bienvenida
-// Swal.fire({
-//   title: "Bienvenido",
-//   text: "Podrás trabajar con la Calculadora Científica!!!",
-//   icon: "success",
-//   confirmButtonText: "OK",
-// });
+//Llamado a función Inicio de Sesión
+btnSesion.addEventListener("click", async () => {
+  await rescatarData();
+  iniciarSesion();
+});
 
 //Toastify
 btnAutor.addEventListener("click", () => {
@@ -103,16 +124,14 @@ const resultadoOperaciones = () => {
   return new Promise((respuesta, rechazo) => {
     setTimeout(() => {
       respuesta(JSON.parse(localStorage.getItem("guardoValoresAnteriores")));
-    }, 2000);
+    }, 300);
   });
 };
 
 //Escuchar boton operacionAnterior
 opAnterior.addEventListener("click", (e) => {
-  const pressionaBoton = 1;
-  e.preventDefault();
   resultadoOperaciones().then((respuesta) => {
-    let resultadoRescatado = respuesta;
-    console.log(resultadoRescatado[`${resultadoRescatado.length - 1}`]);
+    let resultadoRescatado = respuesta[`${respuesta.length - 1}`];
+    visor.agregarOperando(resultadoRescatado.toString());
   });
 });

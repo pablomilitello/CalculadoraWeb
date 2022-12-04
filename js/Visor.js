@@ -1,4 +1,17 @@
 //Declaro la clase Visor
+
+const SIGNOS = {
+  sumar: "+",
+  restar: "-",
+  multiplicar: "x",
+  dividir: "÷",
+  raizcuadrada: "sqrt",
+  sin: "sin",
+  cos: "cos",
+  tg: "tg",
+  ln: "ln",
+  log: "log",
+};
 class Visor {
   constructor(visorValorAnterior, visorValorActual) {
     this.visorValorAnterior = visorValorAnterior;
@@ -6,19 +19,7 @@ class Visor {
     this.valorAnterior = "";
     this.valorActual = "";
     this.calculadora = new Calculadora();
-    this.operacion = "undefined";
-    this.signos = {
-      sumar: "+",
-      restar: "-",
-      multiplicar: "x",
-      dividir: "÷",
-      raizcuadrada: "sqrt",
-      sin: "sin",
-      cos: "cos",
-      tg: "tg",
-      ln: "ln",
-      log: "log",
-    };
+    this.operacion = undefined;
   }
 
   //Metodo para agregar un operando
@@ -75,7 +76,7 @@ class Visor {
   //Metodo para imprimir en el visor
   imprimirEnVisor() {
     this.visorValorActual.textContent = this.valorActual;
-    this.visorValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.operacion] || ""}`;
+    this.visorValorAnterior.textContent = `${this.valorAnterior} ${SIGNOS[this.operacion] || ""}`;
   }
 
   //Metodo para operar la calculadora

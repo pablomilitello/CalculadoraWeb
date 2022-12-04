@@ -7,6 +7,7 @@
 .btnNumero,
 .btnOperador,
 .btnOperadorUnitario,
+.btnOperadorAns,
 .btnBorrar {
   background-color: #ffffff;
   border-color: #000000;
@@ -19,11 +20,13 @@
   .btnNumero:active,
   .btnOperador:active,
   .btnOperadorUnitario:active,
+  .btnOperadorAns:active,
   .btnBorrar:active {
     background-color: #efefd0; }
   .btnNumero:focus,
   .btnOperador:focus,
   .btnOperadorUnitario:focus,
+  .btnOperadorAns:focus,
   .btnBorrar:focus {
     outline: none; }
 
@@ -82,14 +85,15 @@
 * {
   font-family: "Roboto", sans-serif; }
 
-.conteiner__teclado__cientifica {
+.container__teclado__cientifica {
   display: grid;
   grid-template-columns: 4em 4em 4em 4em 4em 4em 4em;
   grid-template-rows: 4em 4em 4em 4em 4em;
   grid-template-areas: "grado factorizacion raizCuadrada  borrarAnterior borrarTodo dividir" "sin cos tg siete ocho nueve multiplicar" "pi log logNatural cuatro cinco seis restar" "nroEuler baseExponente exponencial uno dos tres sumar" "resultadoAnterior invertir porcentaje cero punto igual";
   justify-content: center; }
 
-.conteiner__calculadora__cientifica {
+.container__calculadora__cientifica {
+  display: none;
   background: rgba(35, 87, 137, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -103,6 +107,8 @@
   margin-top: 3em;
   position: absolute;
   top: 5px; }
+  .container__calculadora__cientifica.visible {
+    display: block; }
 
 * {
   margin: 0px;
@@ -124,7 +130,7 @@ h1 {
   margin: 0.5em 0rem 0rem 0rem;
   color: #fcf7f8; }
 
-.conteiner {
+.loginContainer {
   width: 90%;
   height: 4em;
   display: flex;
@@ -132,18 +138,18 @@ h1 {
   align-items: flex-start;
   justify-content: space-between; }
 
-.conteiner_btn__autor {
+.container_btn__autor {
   width: 14em;
   height: 2em; }
 
-.conteiner_btn__CV {
+.container_btn__CV {
   width: 14em;
   height: 3em;
   position: absolute;
   bottom: 2em;
   right: 1em; }
 
-.conteiner__input {
+.container__input {
   display: flex;
   flex-direction: column;
   color: #ffffff;
@@ -153,6 +159,8 @@ h1 {
   border-radius: 8px;
   margin-right: 10px;
   font-weight: bolder; }
+  .container__input.invisible {
+    display: none; }
 
 .div__input {
   padding: 2px;

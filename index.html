@@ -12,39 +12,39 @@
         rel="stylesheet" />
     <script src="./js/Visor.js"></script>
     <script defer src="./js/Calculadora.js"></script>
-    <script defer src="./js/code.js"></script>
+    <script defer src="./js/index.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Calculadora Científica</title>
 </head>
 
 <body>
-    <div class="conteiner">
-        <div class="conteiner_btn__autor">
+    <div class="loginContainer">
+        <div class="container_btn__autor">
             <button id="btn__autor">Push CoderHouse</button>
         </div>
-        <div class="conteiner_btn__CV">
+        <div class="container_btn__CV">
             <button id="btn__cv">CV del Autor</button>
         </div>
-        <form class="conteiner__input">
+        <form class="container__input" id="login" onsubmit="return false;">
             <p class="div__input">Iniciar Sesión</p>
-            <input class="div__input" type="text" placeholder="Usuario" id="usuario" required="">
-            <input class="div__input" type="password" placeholder="Contraseña" id="contrasena" required="">
+            <input class="div__input" type="text" placeholder="Usuario" id="usuario" required>
+            <input class="div__input" type="password" placeholder="Contraseña" id="contrasena" required>
             <button class="div__btn" type="submit" id="btnSesion">Enviar</button>
         </form>
     </div>
 
-    <div class="conteiner__calculadora__cientifica">
+    <div class="container__calculadora__cientifica" id="calculadora">
         <div>
             <h1>CALCULADORA CIENTÍFICA</h1>
         </div>
-        <div class="conteiner__visor">
+        <div class="container__visor">
             <div id="visor">
                 <div id="valorAnterior"></div>
                 <div id="valorActual"></div>
             </div>
         </div>
-        <div class="conteiner__teclado__cientifica">
+        <div class="container__teclado__cientifica">
             <button class="btnOperador">Deg</button>
             <button class="btnOperadorUnitario" value="secuenciaDecreciente">x!</button>
             <button class="btnOperadorUnitario" value="raizcuadrada">Sqrt</button>
@@ -76,7 +76,7 @@
             <button class="btnNumero">3</button>
             <button class="btnOperador" value="sumar">+</button>
 
-            <button class="btnOperador" id="operacionAnterior">Ans</button>
+            <button class="btnOperadorAns" id="operacionAnterior">Ans</button>
             <button class="btnOperador">Inv</button>
             <button class="btnOperador">%</button>
             <button class="btnNumero">0</button>

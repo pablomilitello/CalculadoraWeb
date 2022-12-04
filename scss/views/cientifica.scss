@@ -1,4 +1,4 @@
-.conteiner__teclado__cientifica {
+.container__teclado__cientifica {
   display: grid;
   grid-template-columns: 4em 4em 4em 4em 4em 4em 4em;
   grid-template-rows: 4em 4em 4em 4em 4em;
@@ -12,7 +12,8 @@
   justify-content: center;
 }
 
-.conteiner__calculadora__cientifica {
+.container__calculadora__cientifica {
+  display: none;
   background: rgba(35, 87, 137, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
@@ -26,4 +27,8 @@
   margin-top: 3em;
   position: absolute;
   top: 5px;
+
+  &.visible {
+    display: block;
+  }
 }

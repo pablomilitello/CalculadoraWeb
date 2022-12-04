@@ -16,21 +16,22 @@ h1 {
 }
 
 
-.conteiner {
+.loginContainer {
     width: 90%;
     height: 4em;
     display: flex;
     margin-top: 3.4em;
     align-items: flex-start;
     justify-content: space-between;
+
 }
 
-.conteiner_btn__autor {
+.container_btn__autor {
     width: 14em;
     height: 2em;
 }
 
-.conteiner_btn__CV {
+.container_btn__CV {
     width: 14em;
     height: 3em;
     position: absolute;
@@ -38,7 +39,7 @@ h1 {
     right: 1em;
 }
 
-.conteiner__input {
+.container__input {
     display: flex;
     flex-direction: column;
     color: map-get($colors, color_teclado);
@@ -48,6 +49,10 @@ h1 {
     border-radius: 8px;
     margin-right: 10px;
     font-weight: bolder;
+
+    &.invisible {
+        display: none;
+    }
 }
 
 .div__input {
