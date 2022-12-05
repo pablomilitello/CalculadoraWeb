@@ -15,21 +15,21 @@ const btnSesion = document.getElementById("btnSesion");
 const calculadoraDiv = document.getElementById("calculadora");
 const loginDiv = document.getElementById("login");
 
-//Función para rescatar el Usuario y Contraseña del archivo JSON
+//Función asíncrona para rescatar el Usuario y Contraseña del archivo JSON con una ruta relativa
 let usuarios = [];
 async function rescatarData() {
   const respuesta = await fetch("./js/usuarios.json");
   usuarios = await respuesta.json();
 }
 
-//Función de Inicio de Sesión
+//Función de Inicio de Sesión usando Sweet Alert
 function iniciarSesion() {
   const usuarioRegistrado = usuarios.find((u) => {
     return usuarioInput.value === u.nombre && contrasenaInput.value === u.clave;
   });
   if (usuarioRegistrado) {
     Swal.fire({
-      title: `Bienvenido ${usuarioRegistrado.nombre}`,
+      title: `Bienvenido ${usuarioRegistrado.nombre.toUpperCase()}`,
       text: "Podrás trabajar con la Calculadora Científica!!!",
       icon: "success",
       confirmButtonText: "OK",
@@ -93,6 +93,10 @@ btnNumero.forEach((btn) => {
 btnOperador.forEach((btn) => {
   btn.addEventListener("click", () => visor.agregarOperaciones(btn.value));
 });
+
+//Escuchar botón Invertir Operaciones
+var regresoOperacion = false;
+invertirOperaciones.addEventListener("click", () => visor.invertirOperaciones());
 
 //Escuchar botones de operadores unitarios
 btnOperadorUnitario.forEach((btn) => {

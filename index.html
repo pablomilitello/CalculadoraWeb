@@ -23,15 +23,15 @@
         <div class="container_btn__autor">
             <button id="btn__autor">Push CoderHouse</button>
         </div>
-        <div class="container_btn__CV">
-            <button id="btn__cv">CV del Autor</button>
-        </div>
         <form class="container__input" id="login" onsubmit="return false;">
             <p class="div__input">Iniciar Sesión</p>
             <input class="div__input" type="text" placeholder="Usuario" id="usuario" required>
             <input class="div__input" type="password" placeholder="Contraseña" id="contrasena" required>
             <button class="div__btn" type="submit" id="btnSesion">Enviar</button>
         </form>
+        <div class="container_btn__CV">
+            <button id="btn__cv">CV del Autor</button>
+        </div>
     </div>
 
     <div class="container__calculadora__cientifica" id="calculadora">
@@ -45,16 +45,16 @@
             </div>
         </div>
         <div class="container__teclado__cientifica">
-            <button class="btnOperador">Deg</button>
+            <button class="btnOperadorUnitario" value="deg">Deg</button>
             <button class="btnOperadorUnitario" value="secuenciaDecreciente">x!</button>
             <button class="btnOperadorUnitario" value="raizcuadrada">Sqrt</button>
             <button class="btnBorrar" id="borrarAnterior">←</button>
             <button class="btnDoble btnBorrar" id="borrarTodo" type="submit">AC</button>
             <button class="btnOperador" value="dividir">÷</button>
 
-            <button class="btnOperadorUnitario" value="sin">sin</button>
-            <button class="btnOperadorUnitario" value="cos">cos</button>
-            <button class="btnOperadorUnitario" value="tg">tan</button>
+            <button class="btnOperadorUnitario" value="sin" id="seno">sin</button>
+            <button class="btnOperadorUnitario" value="cos" id="coseno">cos</button>
+            <button class="btnOperadorUnitario" value="tg" id="tangente">tan</button>
             <button class="btnNumero">7</button>
             <button class="btnNumero">8</button>
             <button class="btnNumero">9</button>
@@ -77,8 +77,8 @@
             <button class="btnOperador" value="sumar">+</button>
 
             <button class="btnOperadorAns" id="operacionAnterior">Ans</button>
-            <button class="btnOperador">Inv</button>
-            <button class="btnOperador">%</button>
+            <button class="btnOperador" id="invertirOperaciones">Inv</button>
+            <button class="btnOperador" value="porcentaje">%</button>
             <button class="btnNumero">0</button>
             <button class="btnNumero">.</button>
             <button class="btnDoble btnOperador" value="igual">=</button>

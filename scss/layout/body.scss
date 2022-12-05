@@ -18,41 +18,44 @@ h1 {
 
 .loginContainer {
     width: 90%;
-    height: 4em;
+    height: 90vh;
     display: flex;
-    margin-top: 3.4em;
-    align-items: flex-start;
-    justify-content: space-between;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .container_btn__autor {
-    width: 14em;
+    width: 8em;
     height: 2em;
-}
-
-.container_btn__CV {
-    width: 14em;
-    height: 3em;
     position: absolute;
-    bottom: 2em;
-    right: 1em;
+    top: 1em;
+    left: 1em;
 }
 
 .container__input {
     display: flex;
     flex-direction: column;
     color: map-get($colors, color_teclado);
-    width: 14em;
+    width: 18em;
     height: 10em;
     background-color: black;
     border-radius: 8px;
-    margin-right: 10px;
     font-weight: bolder;
+    margin: 1.5em 0em;
 
     &.invisible {
         display: none;
     }
+}
+
+.container_btn__CV {
+    width: 8em;
+    height: 3em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }
 
 .div__input {

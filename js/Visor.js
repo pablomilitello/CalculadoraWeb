@@ -1,17 +1,26 @@
-//Declaro la clase Visor
-
+//Declaro constante signos para vincular con el visor
 const SIGNOS = {
   sumar: "+",
   restar: "-",
   multiplicar: "x",
   dividir: "÷",
   raizcuadrada: "sqrt",
+  secuenciaDecreciente: "x!",
+  deg: "Deg",
   sin: "sin",
   cos: "cos",
   tg: "tg",
   ln: "ln",
   log: "log",
+  exponencial: "x^y",
+  exponencial10: "EXP",
+  porcentaje: "%",
+  asen: "asen",
+  acos: "acos",
+  atg: "atg",
 };
+
+//Declaro la clase Visor
 class Visor {
   constructor(visorValorAnterior, visorValorActual) {
     this.visorValorAnterior = visorValorAnterior;
@@ -79,6 +88,30 @@ class Visor {
     this.visorValorAnterior.textContent = `${this.valorAnterior} ${SIGNOS[this.operacion] || ""}`;
   }
 
+  //Metodo para invertir las operaciones seno, coseno y tangente
+  invertirOperaciones() {
+    const seno = document.getElementById("seno");
+    const coseno = document.getElementById("coseno");
+    const tangente = document.getElementById("tangente");
+    if (regresoOperacion === false) {
+      regresoOperacion = true;
+      seno.innerHTML = "asen";
+      coseno.innerHTML = "acos";
+      tangente.innerHTML = "atg";
+      seno.value = "asen";
+      coseno.value = "acos";
+      tangente.value = "atg";
+    } else {
+      regresoOperacion = false;
+      seno.innerHTML = "sen";
+      coseno.innerHTML = "cos";
+      tangente.innerHTML = "tg";
+      seno.value = "sen";
+      coseno.value = "cos";
+      tangente.value = "tg";
+    }
+  }
+
   //Metodo para operar la calculadora
   operar() {
     if (this.valorActual == "e") {
@@ -95,7 +128,12 @@ class Visor {
     const anterior = parseFloat(this.valorAnterior);
     const actual = parseFloat(this.valorActual);
 
-    if (this.operacion == "raizcuadrada") {
+    if (
+      this.operacion == "raizcuadrada" ||
+      this.operacion == "asen" ||
+      this.operacion == "acos" ||
+      this.operacion == "atg"
+    ) {
       this.valorActual = this.calculadora[this.operacion](anterior);
     } else {
       this.valorActual = this.calculadora[this.operacion](anterior, actual);
